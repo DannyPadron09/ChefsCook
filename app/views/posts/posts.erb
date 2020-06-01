@@ -1,0 +1,9 @@
+<h1>ChefsCook</h1>
+<h2>Welcome, <%= current_user.name %></h2>
+<h3>All Posts</h3>
+
+<% @posts.each do |post| %>
+    <ul>
+        <li><%= post.title %></li><br>
+    </ul>
+<% end %>
