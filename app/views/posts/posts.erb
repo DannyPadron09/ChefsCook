@@ -1,9 +1,12 @@
 <h1>ChefsCook</h1>
 <h2>Welcome, <%= current_user.name %></h2>
-<h3>All Posts</h3>
+<h3>All Posts <a href="/posts/new">New Post</a> <a href="/logout">Log Out</a></h3>
 
-<% @posts.each do |post| %>
-    <ul>
-        <li><%= post.title %></li><br>
-    </ul>
-<% end %>
+<ul>
+    <% @posts.each do |post| %>
+        <li>
+            <a href="/posts/<%= post.id %>"><%= post.title %></a><br><br>
+                <li><%= post.content %></li>
+        </li><br>
+    <% end %>
+</ul>
