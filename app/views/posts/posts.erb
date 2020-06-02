@@ -5,8 +5,8 @@
 <ul>
     <% @posts.each do |post| %>
         <li>
-            <a href="/posts/<%= post.id %>"><%= post.title %></a><br><br>
-                <li><%= post.content %></li>
+            <label>Title:</label><a href="/posts/<%= post.id %>"><%= post.title %></a><br><br>
+            <label>Content: </label><%= post.content %><br><br>
         </li><br>
     <% end %>
 </ul>
