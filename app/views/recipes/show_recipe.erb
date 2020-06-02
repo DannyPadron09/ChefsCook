@@ -1,0 +1,12 @@
+<h1>ChefsCook</h1>
+<h3><a href="/posts"> All Posts</a> <a href="/posts/new">New Post</a> <a href="/recipes">All Recipes</a> <a href="/recipes/new">New Recipe</a> </a><a href="/logout">Log Out</a></h3><br><br>
+
+
+<h2><%= @recipe.name %></h2>
+<h4><%= @recipe.ingredients %></h4><br><br>
+<p>Made by Chef <%= User.find_by_id(@recipe.user_id).name %></p>
+
+<form action="/recipes/<%= @recipe.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <a href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a> <input type="submit" value="Delete Recipe">
+</form>

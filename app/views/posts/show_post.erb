@@ -1,11 +1,13 @@
 <h1>ChefsCook</h1>
+<h3><a href="/posts"> All Posts</a> <a href="/posts/new">New Post</a> <a href="/recipes">All Recipes</a> <a href="/recipes/new">New Recipe</a> </a><a href="/logout">Log Out</a></h3><br><br>
+
 <h2><%= @post.title %></h2>
-<h3><%= @post.content %></h3>
+<h3><%= @post.content %></h3><br><br>
+<p>Written By: <%= User.find_by_id(@post.user_id).name %></p><br><br>
 
 <form action="/posts/<%= @post.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Post">
+    <a href="/posts/<%= @post.id %>/edit">Edit Post</a> <input type="submit" value="Delete Post">
 </form>
 
-<a href="/posts/<%= @post.id %>/edit">Edit Post</a><br>
-<a href="/posts">All Posts</a>
+

@@ -1,0 +1,10 @@
+<h1>ChefsCook</h1>
+<h2>Edit "<%= @recipe.name %>"</h2>
+<h3><a href="/posts"> All Posts</a> <a href="/posts/new">New Post</a> <a href="/recipes">All Recipes</a> <a href="/recipes/new">New Recipe</a> </a><a href="/logout">Log Out</a></h3><br><br>
+
+<form action="/recipes/<%= @recipe.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+    <label>Recipe Name: </label><input type="text" name="recipe_name" value="<%= @recipe.name %>"><br>
+    <label>Ingredients: </label><textarea name="recipe_ingredients"><%= @recipe.ingredients %></textarea>
+    <input type="submit" value="Edit Post">
+</form>

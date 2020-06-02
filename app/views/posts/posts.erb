@@ -1,12 +1,14 @@
 <h1>ChefsCook</h1>
-<h2>Welcome, <%= current_user.name %></h2>
-<h3>All Posts <a href="/posts/new">New Post</a> <a href="/logout">Log Out</a></h3>
+<h2>Welcome, <%= current_user.name %>, here are All The Posts</h2>
+<h3><a href="/posts"> All Posts</a> <a href="/posts/new">New Post</a> <a href="/recipes">All Recipes</a> <a href="/recipes/new">New Recipe</a> </a><a href="/logout">Log Out</a></h3><br><br>
 
 <ul>
     <% @posts.each do |post| %>
         <li>
-            <label>Title:</label><a href="/posts/<%= post.id %>"><%= post.title %></a><br><br>
+            <a href="/posts/<%= post.id %>"><%= post.title %></a><br><br>
             <label>Content: </label><%= post.content %><br><br>
+            <label><strong>Author: </label><%= User.find_by_id(post.user_id).name %></strong><br>
+            --------------------------------------------------------------------<br><br>
         </li><br>
     <% end %>
 </ul>

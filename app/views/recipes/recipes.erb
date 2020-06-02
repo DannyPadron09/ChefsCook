@@ -1,0 +1,15 @@
+<h1>ChefsCook</h1>
+<h2>These are all your Recipes <%= current_user.name %></h2>
+<h3><a href="/posts"> All Posts</a> <a href="/posts/new">New Post</a> <a href="/recipes">All Recipes</a> <a href="/recipes/new">New Recipe</a> </a><a href="/logout">Log Out</a></h3><br><br>
+
+<ul>
+    <% @recipe.each do |recipe| %>
+        <li>
+            <label><strong>Recipe Name: </strong></label><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a><br><br>
+            <label><strong>Recipe Ingredients: </strong></label><%= recipe.ingredients %><br><br>
+            <label>Made By Chef </label><%= User.find_by_id(recipe.user_id).name %><br>
+            --------------------------------------------------------------------<br><br>
+
+        </li>
+    <% end %>
+</ul>
