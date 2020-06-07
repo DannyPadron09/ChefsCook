@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
     has_secure_password
+    # def password=(string)
+        # encrypted_pw = BRrypt::Password.create(string)
+        # self.XXX_digest = encrypted_pw
+    # end
     has_many :recipes
     has_many :posts
 

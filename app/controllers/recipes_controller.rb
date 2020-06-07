@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
             if params[:recipe_name] == "" || params[:recipe_ingredients] == ""
                 redirect to '/recipes/new'
             else
-                @recipe = current_user.recipes.build(name: params[:recipe_name], ingredients: params[:recipe_ingredients])
+                @recipe = current_user.recipes.new(name: params[:recipe_name], ingredients: params[:recipe_ingredients])
                 if @recipe.save
                     redirect to "/recipes/#{@recipe.id}"
                 else

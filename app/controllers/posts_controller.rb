@@ -20,7 +20,7 @@ class PostsController < ApplicationController
             if params[:title] == "" || params[:content] == ""
                 redirect to '/posts/new'
             else
-                @post = current_user.posts.build(title: params[:title], content: params[:content])
+                @post = current_user.posts.new(title: params[:title], content: params[:content])
                 if @post.save
                     redirect to "/posts/#{@post.id}"
                 else
